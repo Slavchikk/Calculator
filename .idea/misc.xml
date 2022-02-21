@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/AndroidStudioProjects/Calculator2/app/src/main/res/layout/activity_main.xml" value="0.2703804347826087" />
+        <entry key="..\:/Android/AndroidStudioProjects/Calculator2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2795" />
+        <entry key="..\:/Android/AndroidStudioProjects/Calculator2/app/src/main/res/drawable/style_for_knopki.xml" value="0.126" />
+        <entry key="..\:/Android/AndroidStudioProjects/Calculator2/app/src/main/res/layout/activity_main.xml" value="0.4" />
       </map>
     </option>
   </component>
