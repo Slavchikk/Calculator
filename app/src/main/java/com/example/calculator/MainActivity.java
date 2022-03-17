@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView firstNumber;
     TextView secondNumber;
     TextView result;
+    Button history;
     Button one;
     Button two;
     Button three;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     float res;
     float num1;
     float num2;
-
+    String[] arrw = new String[10];
+    int counter = 0;
 
 
     @Override
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         firstNumber = findViewById(R.id.firstNumber);
         secondNumber = findViewById(R.id.secondNumber);
         result = findViewById(R.id.result);
+        history = findViewById(R.id.historical);
         zero = findViewById(R.id.zero);
         one = findViewById(R.id.one);
         two = findViewById(R.id.two);
@@ -168,21 +171,117 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(action == "+"){
                     res = num1 + num2;
                     result.setText(" = " + String.valueOf(res));
+                    if ( counter > 9) counter=0;
+                    arrw[counter] = Float.toString(res);
+                    if (counter == 0)history.setText(arrw[counter]);
+                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
+                    if (counter == 2)
+                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 3)
+                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 4)
+                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 5)
+                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 6)
+                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 7)
+                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                   if (counter == 8)
+                   {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 9)
+                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+
+
+                        counter++;
+
                     break;
                 }
                 if(action == "-"){
                     res = num1 - num2;
                     result.setText(" = " + String.valueOf(res));
+                    if ( counter > 9) counter=0;
+                    arrw[counter] = Float.toString(res);
+                    if (counter == 0)history.setText(arrw[counter]);
+                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
+                    if (counter == 2)
+                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 3)
+                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 4)
+                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 5)
+                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 6)
+                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 7)
+                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 8)
+                    {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 9)
+                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+
+
+                    counter++;
+
                     break;
                 }
                 if(action == "x"){
                     res = num1 * num2;
                     result.setText(" = " + String.valueOf(res));
+                    if ( counter > 9) counter=0;
+                    arrw[counter] = Float.toString(res);
+                    if (counter == 0)history.setText(arrw[counter]);
+                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
+                    if (counter == 2)
+                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 3)
+                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 4)
+                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 5)
+                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 6)
+                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 7)
+                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 8)
+                    {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 9)
+                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+
+
+                    counter++;
+
                     break;
                 }
                 if(action == "/"){
                     res = num1 / num2;
                     result.setText(" = " + String.valueOf(res));
+                    if ( counter > 9) counter=0;
+                    arrw[counter] = Float.toString(res);
+                    if (counter == 0)history.setText(arrw[counter]);
+                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
+                    if (counter == 2)
+                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 3)
+                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 4)
+                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 5)
+                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 6)
+                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 7)
+                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 8)
+                    {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    if (counter == 9)
+                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+
+
+                    counter++;
+
                     break;
                 }
 

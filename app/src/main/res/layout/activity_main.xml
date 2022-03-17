@@ -55,7 +55,8 @@
         android:id="@+id/buttonTable"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/history"
+        app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/secondNumber">
@@ -189,5 +190,25 @@
                 android:text="/" android:background="@drawable/style_for_knopki"/>
         </TableRow>
     </TableLayout>
+
+    <TableLayout
+        android:id="@+id/history"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonTable">
+        <TableRow android:background="@drawable/style_for_knopki" android:layout_weight="1">
+            <Button
+                android:id="@+id/historical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="history" android:background="@drawable/style_for_knopki"/>
+        </TableRow>
+    </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
