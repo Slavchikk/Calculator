@@ -202,11 +202,23 @@
         app:layout_constraintTop_toBottomOf="@id/buttonTable">
         <TableRow android:background="@drawable/style_for_knopki" android:layout_weight="1">
             <Button
+                android:id="@+id/leftclk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="back" android:background="@drawable/style_for_knopki"/>
+            <Button
                 android:id="@+id/historical"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="history" android:background="@drawable/style_for_knopki"/>
+            <Button
+                android:id="@+id/rightclk"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="forward" android:background="@drawable/style_for_knopki"/>
         </TableRow>
     </TableLayout>
 

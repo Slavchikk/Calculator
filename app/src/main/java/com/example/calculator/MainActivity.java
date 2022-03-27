@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView secondNumber;
     TextView result;
     Button history;
+    Button lftclk;
+    Button rghclk;
     Button one;
     Button two;
     Button three;
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     float num2;
     String[] arrw = new String[10];
     int counter = 0;
+    int forgt = 0;
+    int forward = 0;
 
 
     @Override
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         secondNumber = findViewById(R.id.secondNumber);
         result = findViewById(R.id.result);
         history = findViewById(R.id.historical);
+        lftclk = findViewById(R.id.leftclk);
+        rghclk = findViewById(R.id.rightclk);
         zero = findViewById(R.id.zero);
         one = findViewById(R.id.one);
         two = findViewById(R.id.two);
@@ -66,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         divide = findViewById(R.id.divide);
         equals = findViewById(R.id.equals);
         clear = findViewById(R.id.clear);
+        lftclk.setOnClickListener(this);
+        rghclk.setOnClickListener(this);
+        result.setOnClickListener(this);
         one.setOnClickListener(this);
         two.setOnClickListener(this);
         three.setOnClickListener(this);
@@ -171,120 +180,100 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(action == "+"){
                     res = num1 + num2;
                     result.setText(" = " + String.valueOf(res));
-                    if ( counter > 9) counter=0;
-                    arrw[counter] = Float.toString(res);
-                    if (counter == 0)history.setText(arrw[counter]);
-                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
-                    if (counter == 2)
-                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 3)
-                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 4)
-                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 5)
-                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 6)
-                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 7)
-                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                   if (counter == 8)
-                   {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 9)
-                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
 
+                arrw[forgt] = Float.toString(res);
+                    history.setText(arrw[forgt]);
+                    counter = forgt;
+                    forgt++;
 
-                        counter++;
+                if(forgt ==10) forgt = 0;
+
 
                     break;
                 }
                 if(action == "-"){
                     res = num1 - num2;
                     result.setText(" = " + String.valueOf(res));
-                    if ( counter > 9) counter=0;
-                    arrw[counter] = Float.toString(res);
-                    if (counter == 0)history.setText(arrw[counter]);
-                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
-                    if (counter == 2)
-                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 3)
-                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 4)
-                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 5)
-                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 6)
-                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 7)
-                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 8)
-                    {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 9)
-                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    arrw[forgt] = Float.toString(res);
+                    history.setText(arrw[forgt]);
+                    counter = forgt;
+                    forgt++;
 
-
-                    counter++;
-
+                    if(forgt ==10) forgt = 0;
                     break;
                 }
                 if(action == "x"){
                     res = num1 * num2;
                     result.setText(" = " + String.valueOf(res));
-                    if ( counter > 9) counter=0;
-                    arrw[counter] = Float.toString(res);
-                    if (counter == 0)history.setText(arrw[counter]);
-                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
-                    if (counter == 2)
-                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 3)
-                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 4)
-                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 5)
-                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 6)
-                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 7)
-                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 8)
-                    {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 9)
-                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
+                    arrw[forgt] = Float.toString(res);
+                    history.setText(arrw[forgt]);
+                    counter = forgt;
+                    forgt++;
 
-
-                    counter++;
+                    if(forgt ==10) forgt = 0;
 
                     break;
                 }
                 if(action == "/"){
                     res = num1 / num2;
                     result.setText(" = " + String.valueOf(res));
-                    if ( counter > 9) counter=0;
-                    arrw[counter] = Float.toString(res);
-                    if (counter == 0)history.setText(arrw[counter]);
-                    if (counter == 1) { history.setText(arrw[counter - 1] + "  " +arrw[counter] );}
-                    if (counter == 2)
-                    {  history.setText(arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 3)
-                    { history.setText(arrw[counter - 3] + "  " +arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 4)
-                    {history.setText(arrw[counter - 4] + "  " +arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 5)
-                    {  history.setText(arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 6)
-                    {  history.setText(arrw[counter - 6] + "  " +arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 7)
-                    {   history.setText(arrw[counter - 7] + "  " +arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 8)
-                    {   history.setText(arrw[counter - 8] + "  " +arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
-                    if (counter == 9)
-                    {    history.setText(arrw[counter - 9] + "  " +arrw[counter - 8] + "  " + arrw[counter - 7] + "  " + arrw[counter - 6] + "  " + arrw[counter - 5] + "  " + arrw[counter - 4] + "  " + arrw[counter - 3] + "  " + arrw[counter - 2] + "  " + arrw[counter - 1] + "  " + arrw[counter]);}
 
+                    arrw[forgt] = Float.toString(res);
+                    history.setText(arrw[forgt]);
+                    counter = forgt;
+                    forgt++;
 
-                    counter++;
-
+                    if(forgt ==10) forgt = 0;
                     break;
                 }
+            break;
+            case R.id.leftclk:
+                button1 = (Button) view;
+                if (act == button1.getText().toString()) {
+                    act = button1.getText().toString();
+                    if (!fnum) {
+                        fnum = !fnum;
+                    }
+                } else {
 
+                    fnum = !fnum;
+                }
+                action = "lefts";
+
+
+                if(action == "lefts")
+                {
+
+                    counter--;
+                    if(counter == -1 || counter == 10)
+                    { history.setText("Empty!!!"); break;}
+                    history.setText(arrw[counter]);
+
+                }
+                break;
+            case R.id.rightclk:
+                button1 = (Button) view;
+                if (act == button1.getText().toString()) {
+                    act = button1.getText().toString();
+                    if (!fnum) {
+                        fnum = !fnum;
+                    }
+                } else {
+
+                    fnum = !fnum;
+                }
+                action = "right";
+
+
+                if(action == "right")
+                {
+                    counter++;
+                    if(arrw[counter] == null || counter > 9 || counter < 0)
+                    { history.setText("Empty!!!");break;}
+                    history.setText(arrw[counter]);
+
+                }
+                break;
             case R.id.clear:
                 firstNumber.setText("");
                 secondNumber.setText("");
