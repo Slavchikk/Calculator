@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String[] arrw = new String[10];
     int counter = 0;
     int forgt = 0;
-    int forward = 1;
+    int forward = 0;
 
 
     @Override
