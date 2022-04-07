@@ -1,13 +1,14 @@
+
 package com.example.calculator;
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class Activity_2 extends AppCompatActivity implements View.OnClickListener {
     Button goToSecWin;
     TextView signArea;
     TextView firstNumber;
@@ -25,10 +26,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button seven;
     Button eight;
     Button nine;
-    Button plus;
-    Button minus;
-    Button multiply;
-    Button divide;
+    Button cos;
+    Button sin;
+    Button sqrtNums;
+    Button stepNums;
     Button equals;
     Button clear;
     Button zero;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String act;
     String action;
     boolean fnum;
-    float res;
+    double res;
     float num1;
     float num2;
     String[] arrw = new String[10];
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_2);
 
         act = "";
         fnum = true;
@@ -71,10 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seven = findViewById(R.id.seven);
         eight = findViewById(R.id.eight);
         nine = findViewById(R.id.nine);
-        plus = findViewById(R.id.plus);
-        minus = findViewById(R.id.minus);
-        multiply = findViewById(R.id.multiply);
-        divide = findViewById(R.id.divide);
+        cos = findViewById(R.id.cos);
+        sin = findViewById(R.id.sin);
+        sqrtNums = findViewById(R.id.sqrtNums);
+        stepNums = findViewById(R.id.stepNums);
         equals = findViewById(R.id.equals);
         clear = findViewById(R.id.clear);
         goToSecWin.setOnClickListener(this);
@@ -91,10 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seven.setOnClickListener(this);
         eight.setOnClickListener(this);
         nine.setOnClickListener(this);
-        plus.setOnClickListener(this);
-        minus.setOnClickListener(this);
-        divide.setOnClickListener(this);
-        multiply.setOnClickListener(this);
+        cos.setOnClickListener(this);
+       sin.setOnClickListener(this);
+        sqrtNums.setOnClickListener(this);
+        stepNums.setOnClickListener(this);
         clear.setOnClickListener(this);
         equals.setOnClickListener(this);
         zero.setOnClickListener(this);
@@ -103,9 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.goToSecWin:
-                Intent intent = new Intent(MainActivity.this, Activity_2.class);
+                Intent intent = new Intent(Activity_2.this, MainActivity.class);
                 startActivity(intent);
-            break;
+                break;
             case R.id.zero:
             case R.id.one:
             case R.id.two:
@@ -131,8 +132,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     secondNumber.setText(numText);
                 }
                 break;
-            case R.id.plus:
-                signArea.setText("+");
+            case R.id.cos:
+                Button buttonCos = (Button) view;
+                numText = firstNumber.getText().toString();
+                numText += buttonCos.getText().toString();
+                firstNumber.setText(numText);
+
+                Button button1 = (Button) view;
+                act = button1.getText().toString();
+                fnum = !fnum;
+                action = "cos";
+                break;
+            case R.id.sin:
+                Button buttonSin = (Button) view;
+                numText = firstNumber.getText().toString();
+                numText += buttonSin.getText().toString();
+                firstNumber.setText(numText);
+
+                Button button2 = (Button) view;
+                act = button2.getText().toString();
+                fnum = !fnum;
+                action = "sin";
+                break;
+            case R.id.sqrtNums:
+                signArea.setText("√x");
                 button1 = (Button) view;
                 if (act == button1.getText().toString()) {
                     act = button1.getText().toString();
@@ -143,11 +166,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     fnum = !fnum;
                 }
-                action = "+";
-
+                action = "sqrt";
                 break;
-            case R.id.minus:
-                signArea.setText("-");
+            case R.id.stepNums:
+                signArea.setText("x^y");
                 button1 = (Button) view;
                 if (act == button1.getText().toString()) {
                     act = button1.getText().toString();
@@ -158,60 +180,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     fnum = !fnum;
                 }
-                action = "-";
+                action = "step";
                 break;
-            case R.id.multiply:
-                signArea.setText("X");
-                button1 = (Button) view;
-                if (act == button1.getText().toString()) {
-                    act = button1.getText().toString();
-                    if (!fnum) {
-                        fnum = !fnum;
-                    }
-                } else {
 
-                    fnum = !fnum;
-                }
-                action = "x";
-                break;
-            case R.id.divide:
-                signArea.setText("/");
-                button1 = (Button) view;
-                if (act == button1.getText().toString()) {
-                    act = button1.getText().toString();
-                    if (!fnum) {
-                        fnum = !fnum;
-                    }
-                } else {
 
-                    fnum = !fnum;
-                }
-                action = "/";
-                break;
 
             case R.id.equals:
 
+                if(action == "cos") {
+                    num2 = Float.valueOf(secondNumber.getText().toString());
+                    res = Math.cos(num2);
+                    result.setText(" = " + String.valueOf(res));
+
+                    arrw[forgt] = Double.toString(res);
+                    historical.setText(arrw[forgt]);
+                    counter = forgt;
+                    forgt++;
+
+                    if (forgt == 10) forgt = 0;
+
+
+                    break;
+                }
+                if(action == "sin") {
+                    num2 = Float.valueOf(secondNumber.getText().toString());
+                    res = Math.sin(num2);
+                    result.setText(" = " + String.valueOf(res));
+
+                    arrw[forgt] = Double.toString(res);
+                    historical.setText(arrw[forgt]);
+                    counter = forgt;
+                    forgt++;
+
+                    if (forgt == 10) forgt = 0;
+
+
+                    break;
+                }
                 num1 = Float.valueOf(firstNumber.getText().toString());
                 num2 = Float.valueOf(secondNumber.getText().toString());
-                if(action == "+"){
-                    res = num1 + num2;
 
+                if(action == "sqrt"){
+                    res = Math.pow(num1,(1/num2));
                     result.setText(" = " + String.valueOf(res));
-
-                arrw[forgt] = Float.toString(res);
-                    historical.setText(arrw[forgt]);
-                    counter = forgt;
-                    forgt++;
-
-                if(forgt ==10) forgt = 0;
-
-
-                    break;
-                }
-                if(action == "-"){
-                    res = num1 - num2;
-                    result.setText(" = " + String.valueOf(res));
-                    arrw[forgt] = Float.toString(res);
+                    arrw[forgt] = Double.toString(res);
                     historical.setText(arrw[forgt]);
                     counter = forgt;
                     forgt++;
@@ -219,10 +231,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if(forgt ==10) forgt = 0;
                     break;
                 }
-                if(action == "x"){
-                    res = num1 * num2;
+                if(action == "step"){
+                    res = Math.pow(num1,num2);
                     result.setText(" = " + String.valueOf(res));
-                    arrw[forgt] = Float.toString(res);
+                    arrw[forgt] = Double.toString(res);
                     historical.setText(arrw[forgt]);
                     counter = forgt;
                     forgt++;
@@ -231,19 +243,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     break;
                 }
-                if(action == "/"){
-                    res = num1 / num2;
-                    result.setText(" = " + String.valueOf(res));
 
-                    arrw[forgt] = Float.toString(res);
-                    historical.setText(arrw[forgt]);
-                    counter = forgt;
-                    forgt++;
-
-                    if(forgt ==10) forgt = 0;
-                    break;
-                }
-            break;
+                break;
             case R.id.historical:
                 button1 = (Button) view;
                 if (act == button1.getText().toString()) {
@@ -321,6 +322,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 acttt=0;
                 fnum  = true;
                 break;
+
         }
     }
 }

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_2">
+
+        <TextView
+            android:id="@+id/firstNumber"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:textSize="12pt"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/buttonTable"
+            app:layout_constraintEnd_toStartOf="@+id/signArea"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/signArea"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:textSize="12pt"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/buttonTable"
+            app:layout_constraintEnd_toStartOf="@+id/secondNumber"
+            app:layout_constraintStart_toEndOf="@id/firstNumber"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/secondNumber"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:textSize="12pt"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/buttonTable"
+            app:layout_constraintEnd_toStartOf="@+id/result"
+            app:layout_constraintStart_toEndOf="@id/signArea"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:textSize="12pt"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/buttonTable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/secondNumber"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:id="@+id/buttonTable"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/history"
+            app:layout_constraintBaseline_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondNumber">
+
+            <TableRow
+                android:background="@drawable/style_for_knopki"
+                android:layout_weight="1">
+
+
+                <Button
+                    android:id="@+id/seven"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="7"
+                    android:background="@drawable/style_for_knopki" />
+
+                <Button
+                    android:id="@+id/eight"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="8" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/nine"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="9" android:background="@drawable/style_for_knopki" />
+
+                <Button
+                    android:id="@+id/equals"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="=" android:background="@drawable/style_for_knopki" />
+
+            </TableRow>
+
+            <TableRow android:background="@drawable/style_for_knopki" android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/four"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="4" android:background="@drawable/style_for_knopki" />
+
+                <Button
+                    android:id="@+id/five"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="5" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/six"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="6" android:background="@drawable/style_for_knopki" />
+
+                <Button
+                    android:id="@+id/cos"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="cos" android:background="@drawable/style_for_knopki"/>
+            </TableRow>
+
+            <TableRow android:background="@drawable/style_for_knopki" android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/one"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/two"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="2" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/three"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="3" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/sin"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="sin" android:background="@drawable/style_for_knopki"/>
+            </TableRow>
+
+            <TableRow  android:background="@drawable/style_for_knopki" android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/clear"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="C" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/zero"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="0" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/sqrtNums"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="√x" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/stepNums"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="x^y" android:background="@drawable/style_for_knopki"/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBaseline_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonTable">
+            <TableRow android:background="@drawable/style_for_knopki" android:layout_weight="1">
+                <Button
+                    android:id="@+id/leftclk"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="bck" android:background="@drawable/style_for_knopki"/>
+
+                <Button
+                    android:id="@+id/historical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/style_for_knopki"
+                    android:text="history" />
+
+                <Button
+                    android:id="@+id/rightclk"
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/style_for_knopki"
+                    android:text="fwd" />
+
+                <Button
+                    android:id="@+id/goToSecWin"
+                    android:layout_width="49dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/style_for_knopki"
+                    android:text="usual finction" />
+            </TableRow>
+        </TableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:textSize="12pt"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonTable"
         app:layout_constraintEnd_toStartOf="@+id/signArea"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +23,7 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:textSize="12pt"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonTable"
         app:layout_constraintEnd_toStartOf="@+id/secondNumber"
         app:layout_constraintStart_toEndOf="@id/firstNumber"
@@ -33,6 +35,7 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:textSize="12pt"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonTable"
         app:layout_constraintEnd_toStartOf="@+id/result"
         app:layout_constraintStart_toEndOf="@id/signArea"
@@ -46,6 +49,7 @@
         android:layout_height="100dp"
         android:gravity="center"
         android:textSize="12pt"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonTable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/secondNumber"
@@ -206,19 +210,31 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="back" android:background="@drawable/style_for_knopki"/>
+                android:text="bck" android:background="@drawable/style_for_knopki"/>
+
             <Button
                 android:id="@+id/historical"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="history" android:background="@drawable/style_for_knopki"/>
+                android:background="@drawable/style_for_knopki"
+                android:text="history" />
+
             <Button
                 android:id="@+id/rightclk"
-                android:layout_width="0dp"
+                android:layout_width="4dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="forward" android:background="@drawable/style_for_knopki"/>
+                android:background="@drawable/style_for_knopki"
+                android:text="fwd" />
+
+            <Button
+                android:id="@+id/goToSecWin"
+                android:layout_width="49dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/style_for_knopki"
+                android:text="Math function" />
         </TableRow>
     </TableLayout>
 
