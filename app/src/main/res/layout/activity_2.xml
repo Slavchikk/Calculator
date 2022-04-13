@@ -237,6 +237,12 @@
                     android:text="usual finction" />
             </TableRow>
         </TableLayout>
-
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="130dp"
+        android:layout_height="24dp"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

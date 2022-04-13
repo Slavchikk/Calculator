@@ -34,8 +34,8 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:gravity="center"
-        android:textSize="12pt"
         android:textColor="@color/black"
+        android:textSize="12pt"
         app:layout_constraintBottom_toTopOf="@+id/buttonTable"
         app:layout_constraintEnd_toStartOf="@+id/result"
         app:layout_constraintStart_toEndOf="@id/signArea"
@@ -237,6 +237,14 @@
                 android:text="Math function" />
         </TableRow>
     </TableLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="130dp"
+        android:layout_height="24dp"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

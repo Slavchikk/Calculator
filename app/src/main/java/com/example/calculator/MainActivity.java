@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -44,13 +46,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int forgt = 0;
     int forward = 0;
     int acttt = 0;
-
+String[] spin_arr = new String[10];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spin_arr);
+        spinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        Spinner spArrw = (Spinner) findViewById(R.id.spinner);
+        spin_arr[0] = "История";
+        for(int i =1;i < spin_arr.length;i++)
+        {
+            spin_arr[i] = " ";
+        }
+        spArrw.setAdapter(spinAdapter);
         act = "";
         fnum = true;
         signArea = findViewById(R.id.signArea);
@@ -99,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         equals.setOnClickListener(this);
         zero.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -197,9 +209,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     res = num1 + num2;
 
                     result.setText(" = " + String.valueOf(res));
-
+                    spin_arr[forgt] = Float.toString(res);
                 arrw[forgt] = Float.toString(res);
                     historical.setText(arrw[forgt]);
+
                     counter = forgt;
                     forgt++;
 
@@ -212,6 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     res = num1 - num2;
                     result.setText(" = " + String.valueOf(res));
                     arrw[forgt] = Float.toString(res);
+                    spin_arr[forgt] = Float.toString(res);
                     historical.setText(arrw[forgt]);
                     counter = forgt;
                     forgt++;
@@ -223,6 +237,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     res = num1 * num2;
                     result.setText(" = " + String.valueOf(res));
                     arrw[forgt] = Float.toString(res);
+                    spin_arr[forgt] = Float.toString(res);
                     historical.setText(arrw[forgt]);
                     counter = forgt;
                     forgt++;
@@ -236,6 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     result.setText(" = " + String.valueOf(res));
 
                     arrw[forgt] = Float.toString(res);
+                    spin_arr[forgt] = Float.toString(res);
                     historical.setText(arrw[forgt]);
                     counter = forgt;
                     forgt++;
